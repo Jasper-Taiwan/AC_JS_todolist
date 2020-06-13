@@ -43,15 +43,20 @@
     todo.appendChild(replaceButton);
 
     //刪除按鍵
-    removeButton.onclick = function(){
+    
+    removeButton.onclick = function() {
+
+      var check_remove = confirm("是否確定完成"); //增加判斷是否確定完成才刪除的功能
+      if (check_remove == true){
       this.parentNode.parentNode.removeChild(this.parentNode);
+      }
     }
 
-    removeButton.textContent="V";
+    removeButton.textContent = "V";
     todo.appendChild(removeButton);
 
-    document.getElementById("todolist").appendChild(todo);//加到todolist
-    document.getElementById('input').value = "";//每次輸入完清空input
+    document.getElementById("todolist").appendChild(todo); //加到todolist
+    document.getElementById('input').value = ""; //每次輸入完清空input
 
 
   }
